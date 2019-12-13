@@ -19,6 +19,7 @@ private:
 public:
     VideoSink( UsageEnvironment &env, unsigned int recvBufSize, WebSocketClient *wsClient ) : SinkBase( env, recvBufSize ), wsClient( wsClient ) {
         // 缓冲区前面留出起始码4字节
+        // Leave a start code of 4 bytes in front of the buffer
         recvBuf += sizeof( start_code );
     }
 
@@ -33,8 +34,10 @@ public:
         size_t scLen = sizeof( start_code );
         if ( !firstFrameWritten ) {
             // 填写起始码
+            // Fill in the start code
             memcpy( recvBuf - scLen, start_code, scLen );
             // 防止RTSP源不送SPS/PPS
+            // Prevent RTSP sources from sending SPS / PPS
             unsigned numSPropRecords;
             SPropRecord *sPropRecords = parseSPropParameterSets( sPropParameterSetsStr, numSPropRecords );
             for ( unsigned i = 0; i < numSPropRecords; ++i ) {
@@ -72,6 +75,7 @@ public:
 
 protected:
     // 测试用的摄像头（RTSP源）仅仅有一个子会话，因此这里简化了实现：
+    // The test camera (RTSP source) has only one sub-session, so the implementation is simplified here:
     bool acceptSubSession( const char *mediumName, const char *codec ) override {
         return true;
     }
@@ -89,7 +93,7 @@ int main() {
     WebSocketClient *wsClient;
     wsClient = new WebSocketClient( "ws://192.168.0.89:9090/h264src" );
     wsClient->connect();
-    sleep( 3 ); // 等待WebSocket连接建立
+    sleep( 3 ); // 等待WebSocket连接建立 // Wait for WebSocket connection to be established
     wsClient->sendText( "ch1" );
     TaskScheduler *scheduler = BasicTaskScheduler::createNew();
     BasicUsageEnvironment *env = BasicUsageEnvironment::createNew( *scheduler );

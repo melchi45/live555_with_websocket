@@ -17,6 +17,7 @@ protected:
     SinkBase( UsageEnvironment &env, unsigned recvBufSize );
 
     // sink->startPlaying会调用continuePlaying，实现播放逻辑
+    // sink-> startPlaying will call continuePlaying to implement the playback logic
     virtual Boolean continuePlaying();
 
     virtual ~SinkBase();
