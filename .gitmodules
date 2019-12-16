@@ -4,3 +4,6 @@
 [submodule "live555"]
 	path = external/live555
 	url = https://github.com/melchi45/live555
+[submodule "websocketpp"]
+	path = external/websocketpp
+	url = https://github.com/zaphoyd/websocketpp.git
