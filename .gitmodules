@@ -1,6 +1,6 @@
-[submodule "external/boost"]
+[submodule "boost"]
 	path = external/boost
 	url = https://github.com/boostorg/boost.git
-[submodule "external/live555"]
+[submodule "live555"]
 	path = external/live555
 	url = https://github.com/melchi45/live555
