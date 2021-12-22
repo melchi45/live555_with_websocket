@@ -3,12 +3,12 @@
 //
 
 #include "WebSocketClient.h"
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
 
 using websocketpp::lib::placeholders::_1;
 using websocketpp::lib::placeholders::_2;
 using websocketpp::lib::bind;
-
-#include "spdlog/spdlog.h"
 
 static auto LOGGER = spdlog::stdout_color_st( "WebSocketClient" );
 

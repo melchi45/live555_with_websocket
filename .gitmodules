@@ -2,8 +2,8 @@
 	path = external/boost
 	url = https://github.com/boostorg/boost.git
 [submodule "live555"]
-	path = external/live555
-	url = https://github.com/melchi45/live555
+	path = live555
+	url = https://github.com/melchi45/live555.git
 [submodule "websocketpp"]
 	path = external/websocketpp
 	url = https://github.com/zaphoyd/websocketpp.git

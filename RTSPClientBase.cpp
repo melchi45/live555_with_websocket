@@ -1,5 +1,6 @@
 #include "live5555/RTSPClientBase.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
 
 static auto LOGGER = spdlog::stdout_color_st( "RTSPClientBase" );
 

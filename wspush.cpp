@@ -2,6 +2,7 @@
 #include "live5555/client.h"
 
 #include "spdlog/spdlog.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
 
 #include "WebSocketClient.h"
 
