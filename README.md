@@ -7,4 +7,5 @@ This source need websocketpp and boost library.
 sudo apt update
 sudo apt install libwebsocketpp-dev
 sudo apt install libboost-all-dev
+sudo apt install libspdlog-dev
 ```
